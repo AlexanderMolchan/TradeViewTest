@@ -13,14 +13,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var overlayWindow: UIWindow?
     private var scene: UIWindowScene?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
         guard let scene = (scene as? UIWindowScene) else { return }
         self.scene = scene
         window = UIWindow(windowScene: scene)
         window?.windowScene = scene
-
         window?.rootViewController = TabBarViewController()
         window?.makeKeyAndVisible()
     }
@@ -72,7 +69,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func removeOverlay() {
         overlayWindow = nil
     }
-
 
 }
 

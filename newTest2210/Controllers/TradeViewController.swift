@@ -76,7 +76,6 @@ final class TradeViewController: UIViewController {
         button.tintColor = .white
         button.setTitle(selectedCurrencyType.rawValue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .heavy)
-        
         button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         button.contentHorizontalAlignment = .center
         button.semanticContentAttribute = .forceRightToLeft
@@ -245,7 +244,6 @@ final class TradeViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     // MARK: -
@@ -527,12 +525,15 @@ final class TradeViewController: UIViewController {
         }
     }
     
+    private func removeSuccessLabel() {
+        successLabel.removeFromSuperview()
+    }
+    
     private func successAnimation() {
         view.addSubview(successLabel)
         successLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-        
         UIView.animate(withDuration: 0.2) {
             self.successLabel.alpha = 1
         } completion: {  isFinish in
@@ -558,10 +559,5 @@ final class TradeViewController: UIViewController {
             }
         }
     }
-    
-    private func removeSuccessLabel() {
-        successLabel.removeFromSuperview()
-    }
-
 }
 

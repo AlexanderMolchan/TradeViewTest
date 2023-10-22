@@ -53,7 +53,7 @@ final class TopViewController: UIViewController {
         layoutElements()
         makeConstraints()
         tableViewSettings()
-        deposidAdd()
+        depositAdd()
     }
     
     // MARK: -
@@ -63,7 +63,7 @@ final class TopViewController: UIViewController {
         traidersArray = dataSource.getTraiderData()
     }
     
-    private func deposidAdd() {
+    private func depositAdd() {
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
             let randomTraider = Int.random(in: 0...self.traidersArray.count - 1)
             let randomDeposit = Int.random(in: 100...200)
@@ -73,7 +73,6 @@ final class TopViewController: UIViewController {
             Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { _ in
                 self.traidersArray.sort(by: { $0.deposit > $1.deposit })
                 self.tableView.reloadData()
-                
             }
         }
     }
