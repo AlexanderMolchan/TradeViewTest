@@ -71,7 +71,6 @@ final class CurrencyViewController: UIViewController {
             make.top.equalToSuperview().inset(64)
             make.centerX.equalToSuperview()
         }
-        
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(36)
             make.leading.trailing.bottom.equalToSuperview()
