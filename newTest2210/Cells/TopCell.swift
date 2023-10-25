@@ -24,8 +24,8 @@ final class TopCell: UITableViewCell {
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 12, weight: .light)
-        label.textColor = UIColor(red: 0.757, green: 0.761, blue: 0.780, alpha: 1)
+        label.font = .systemFont(ofSize: 14, weight: .heavy)
+        label.textColor = .white
         return label
     }()
     
@@ -38,24 +38,24 @@ final class TopCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 12, weight: .light)
-        label.textColor = UIColor(red: 0.757, green: 0.761, blue: 0.780, alpha: 1)
+        label.font = .systemFont(ofSize: 14, weight: .heavy)
+        label.textColor = .white
         return label
     }()
     
     lazy var depositLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 12, weight: .light)
-        label.textColor = UIColor(red: 0.757, green: 0.761, blue: 0.780, alpha: 1)
+        label.font = .systemFont(ofSize: 14, weight: .heavy)
+        label.textColor = .white
         return label
     }()
     
     private lazy var profitLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 12, weight: .light)
-        label.textColor = UIColor(red: 0.757, green: 0.761, blue: 0.780, alpha: 1)
+        label.font = .systemFont(ofSize: 14, weight: .heavy)
+        label.textColor = UIColor(red: 0.373, green: 0.714, blue: 0.471, alpha: 1)
         return label
     }()
     
@@ -81,11 +81,6 @@ final class TopCell: UITableViewCell {
     func cellConfigurate(traider: TraiderModel? = nil, index: Int? = nil) {
         guard let index, let traider else { return }
         backgroundColor = index % 2 == 0 ? UIColor(red: 0.180, green: 0.188, blue: 0.239, alpha: 1) : .clear
-        convertLabel(label: numberLabel)
-        convertLabel(label: nameLabel)
-        convertLabel(label: depositLabel)
-        convertLabel(label: profitLabel)
-        profitLabel.textColor = UIColor(red: 0.373, green: 0.714, blue: 0.471, alpha: 1)
         countryImage.snp.makeConstraints { make in
             make.width.equalTo(10)
             make.height.equalTo(10)
@@ -96,13 +91,7 @@ final class TopCell: UITableViewCell {
         depositLabel.text = "\(traider.deposit)"
         profitLabel.text = "\(traider.profit)"
     }
-    
-    
-    private func convertLabel(label: UILabel) {
-        label.font = .systemFont(ofSize: 14, weight: .heavy)
-        label.textColor = .white
-    }
-    
+
     private func layoutElements() {
         selectionStyle = .none
         addSubview(stackView)

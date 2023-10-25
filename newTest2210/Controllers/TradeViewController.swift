@@ -221,7 +221,7 @@ final class TradeViewController: UIViewController {
     private var totalSecond = 0
     private var totalBalance = 10000
     private var investmentSum = 100
-    var selectedCurrencyType: CurrencyTypes = .gpbUsd
+    private var selectedCurrencyType: CurrencyTypes = .gpbUsd
     
     // MARK: -
     // MARK: - Lifecycle
