@@ -259,13 +259,13 @@ final class TradeViewController: UIViewController {
     private func progressImitation() {
         var newProgress: Float = 0.0
         var progressString = "\(Int(newProgress * 100))%"
-        timer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { _ in
-            newProgress = self.progress + 0.25
+        timer = Timer.scheduledTimer(withTimeInterval: 0.015, repeats: true) { _ in
+            newProgress = self.progress + 0.01
             progressString = "\(Int(newProgress * 100))%"
             self.indicator.setProgress(newProgress, animated: true)
             self.indicatorLabel.text = progressString
             self.progress = newProgress
-            if self.progress == 1 {
+            if self.progress > 1 {
                 self.timer?.invalidate()
                 self.animatedProgressRemove()
             }
